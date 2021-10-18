@@ -1,0 +1,35 @@
+//Arabic System
+
+#include <stdio.h>
+
+int main()
+{
+    int n;
+    printf("Enter the first number: ");
+    scanf("%d", &n);
+    int m;
+    printf("Enter the sencond number: ");
+    scanf("%d", &m);
+
+    int a = 0;
+
+    int op;
+    printf("For Addition, enter 2\nFor Multiplication, enter 4\n");
+
+    scanf("%d", &op);
+
+    switch (op)
+    {
+    case 2:
+        a = n + m;
+        printf("%d", a);
+        break;
+    case 4:
+        a = n * m;
+        printf("%d", a);
+        break;
+    default:
+        printf("Invalid input");
+        break;
+    }
+}
