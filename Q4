@@ -1,0 +1,76 @@
+//Binary System
+
+#include <stdio.h>
+#include <math.h>
+
+// 101010101010
+
+int btod(int x)
+{
+    int i = 0;
+    int v = 0;
+    while (x != 0)
+    {
+        int t = x % 10;
+        if (t == 1)
+        {
+            v = v + pow(2, i);
+        }
+        x = x / 10;
+        i++;
+    }
+
+    return v;
+}
+
+int dtob(int x)
+{
+    int u[100];
+    int j;
+    for (j = 0; x > 0; j++)
+    {
+        u[j] = x % 2;
+        x = x / 2;
+    }
+
+    for (j = j - 1; j >= 0; j--)
+    {
+        printf("%d", u[j]);
+    }
+}
+
+int main()
+{
+    int n;
+    printf("Enter the first Binary number: ");
+    scanf("%d", &n);
+    int m;
+    printf("Enter the second Binary number: ");
+    scanf("%d", &m);
+
+    int nd = btod(n);
+    int md = btod(m);
+
+    int a = 0;
+
+    int op;
+    printf("For Addition, enter 2\nFor Multiplication, enter 4\n");
+    scanf("%d", &op);
+
+    switch (op)
+    {
+    case 2:
+        a = nd + md;
+        dtob(a);
+        break;
+
+    case 4:
+        a = nd * md;
+        dtob(a);
+        break;
+
+    default:
+        printf("Invalid input");
+        break;
+    }
+}
